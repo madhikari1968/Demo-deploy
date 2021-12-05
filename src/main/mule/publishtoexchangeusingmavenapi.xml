@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4cd78bae-9fcf-431e-b419-0bf082230df8" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="publishtoexchangeusingmavenapiFlow" doc:id="b18ab7c0-e60d-40f0-bcce-d1bc95e5f137" >
+		<http:listener doc:name="Listener" doc:id="aed0df05-fc29-4a0c-aeb5-a4d58fa95cc5" config-ref="HTTP_Listener_config" path="/publish"/>
+		<logger level="INFO" doc:name="Logger" doc:id="f53dbc95-923d-4f60-8dd6-8e7a43c2584c" message='"Successfully Published To Exchange"'/>
+	</flow>
+</mule>
