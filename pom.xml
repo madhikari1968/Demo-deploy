@@ -32,6 +32,22 @@
                 <extensions>true</extensions>
                 <configuration>
                     <classifier>mule-application</classifier>
+                    <configuration>
+					    <cloudHubDeployment>
+					      <uri>https://anypoint.mulesoft.com</uri>
+					      <muleVersion>4.3.0</muleVersion>
+					      <username>monnmule</username>
+					      <password>Mulesoft@2021</password>
+					      <applicationName>publishtoexchangeusingmavenapi</applicationName>
+					      <environment>SANDBOX</environment>
+					      <region>us-east-2</region>
+					      <workers>1</workers>
+					      <workerType>MICRO</workerType>
+					      <properties>
+					        <key>value</key>
+					      </properties>
+					    </cloudHubDeployment>
+ 					</configuration>
                 </configuration>
             </plugin>          	
 			<!-- The below plugin is required when we will call "exchange Maven Facade Api" v3. As we put v1 in url of distribution management
